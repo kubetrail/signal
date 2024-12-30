@@ -34,17 +34,17 @@ var (
 )
 
 func TestFilterFir_Filter(t *testing.T) {
-	f, err := NewDffirFromJSON(jsonDffir)
+	f, err := NewDffirFromJSON([]byte(jsonDffir))
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	rawSignal, err := util.GetSignalFromJSON(jsonRawSignal)
+	rawSignal, err := util.GetSignalFromJSON([]byte(jsonRawSignal))
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	filteredSignal, err := util.GetSignalFromJSON(jsonFilteredSignalDffir)
+	filteredSignal, err := util.GetSignalFromJSON([]byte(jsonFilteredSignalDffir))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -60,17 +60,17 @@ func TestFilterFir_Filter(t *testing.T) {
 }
 
 func TestSOSFilter_Filter(t *testing.T) {
-	f, err := NewDf2sosFromJSON(jsonDf2sos)
+	f, err := NewDf2sosFromJSON([]byte(jsonDf2sos))
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	rawSignal, err := util.GetSignalFromJSON(jsonRawSignal)
+	rawSignal, err := util.GetSignalFromJSON([]byte(jsonRawSignal))
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	filteredSignal, err := util.GetSignalFromJSON(jsonFilteredSignalDf2sos)
+	filteredSignal, err := util.GetSignalFromJSON([]byte(jsonFilteredSignalDf2sos))
 	if err != nil {
 		t.Fatal(err)
 	}

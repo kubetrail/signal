@@ -7,7 +7,7 @@ type Filter interface {
 
 // NewDf2sosFromJSON creates a new direct form II SOS filter object from the input
 // json serialized version.
-func NewDf2sosFromJSON(js string) (Filter, error) {
+func NewDf2sosFromJSON(js []byte) (Filter, error) {
 	f := new(df2sos)
 	if err := f.unmarshal(js); err != nil {
 		return nil, err
@@ -17,7 +17,7 @@ func NewDf2sosFromJSON(js string) (Filter, error) {
 
 // NewDffirFromJSON creates a new direct form FIR filter object from the input
 // json serialized version.
-func NewDffirFromJSON(js string) (Filter, error) {
+func NewDffirFromJSON(js []byte) (Filter, error) {
 	f := new(dffir)
 	if err := f.unmarshal(js); err != nil {
 		return nil, err

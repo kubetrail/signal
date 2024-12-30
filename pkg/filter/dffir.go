@@ -20,8 +20,8 @@ func (f *dffir) Filter(signal []float64) ([]float64, error) {
 	return filterUsingDirectFormFIR(signal, f.Numerator)
 }
 
-func (f *dffir) unmarshal(js string) error {
-	if err := json.Unmarshal([]byte(js), f); err != nil {
+func (f *dffir) unmarshal(js []byte) error {
+	if err := json.Unmarshal(js, f); err != nil {
 		return err
 	}
 

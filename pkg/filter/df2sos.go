@@ -18,8 +18,8 @@ type df2sos struct {
 	RateChangeFactor    []int       `json:"RateChangeFactor"`
 }
 
-func (f *df2sos) unmarshal(js string) error {
-	if err := json.Unmarshal([]byte(js), f); err != nil {
+func (f *df2sos) unmarshal(js []byte) error {
+	if err := json.Unmarshal(js, f); err != nil {
 		return err
 	}
 

@@ -10,9 +10,9 @@ const (
 )
 
 // GetSignalFromJSON fetches a signal out of its JSON representation
-func GetSignalFromJSON(s string) ([]float64, error) {
+func GetSignalFromJSON(s []byte) ([]float64, error) {
 	var out []float64
-	if err := json.Unmarshal([]byte(s), &out); err != nil {
+	if err := json.Unmarshal(s, &out); err != nil {
 		return nil, err
 	}
 	return out, nil

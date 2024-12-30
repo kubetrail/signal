@@ -25,17 +25,17 @@ var (
 )
 
 func TestDirectFormFIRFilter1(t *testing.T) {
-	f, err := NewDffirFromJSON(f1)
+	f, err := NewDffirFromJSON([]byte(f1))
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	x, err := util.GetSignalFromJSON(s)
+	x, err := util.GetSignalFromJSON([]byte(s))
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	yRef, err := util.GetSignalFromJSON(y1)
+	yRef, err := util.GetSignalFromJSON([]byte(y1))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -51,17 +51,17 @@ func TestDirectFormFIRFilter1(t *testing.T) {
 }
 
 func TestDirectFormFIRFilter2(t *testing.T) {
-	f, err := NewDffirFromJSON(f2)
+	f, err := NewDffirFromJSON([]byte(f2))
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	x, err := util.GetSignalFromJSON(s)
+	x, err := util.GetSignalFromJSON([]byte(s))
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	yRef, err := util.GetSignalFromJSON(y2)
+	yRef, err := util.GetSignalFromJSON([]byte(y2))
 	if err != nil {
 		t.Fatal(err)
 	}
